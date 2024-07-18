@@ -15,4 +15,3 @@ export default function initializeRooms() {
   // Return the array of ClassRoom objects
   return [room1, room2, room3];
 }
-
