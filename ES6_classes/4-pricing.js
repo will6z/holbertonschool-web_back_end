@@ -1,4 +1,4 @@
-lo// 4-pricing.js
+// 4-pricing.js
 
 import Currency from './3-currency.js';
 
@@ -54,3 +54,4 @@ export default class Pricing {
     return value;
   }
 }
+
