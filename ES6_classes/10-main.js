@@ -1,14 +1,9 @@
-const cloneSymbol = Symbol('clone');
+import Car from './10-car.js';
 
-export default class Car {
-  constructor(brand, motor, color) {
-    this._brand = brand;
-    this._motor = motor;
-    this._color = color;
-  }
-
-  cloneCar() {
-    const ClonedCar = Object.getPrototypeOf(this).constructor;
-    return new ClonedCar(this._brand, this._motor, this._color);
-  }
-}
+test("Car has the correct definition", () => {
+  const bmw = new Car('BMW', 'Turbo', 'Mango');
+  expect(bmw._brand).toBe('BMW');
+  expect(bmw._color).toBe('Mango');
+  expect(bmw._motor).toBe('Turbo');
+  expect(bmw._range).toBe(undefined);
+});
