@@ -18,4 +18,3 @@ class Building {
 }
 
 export default Building;
-
