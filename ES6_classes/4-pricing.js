@@ -1,57 +1,54 @@
-// 4-pricing.js
-
-import Currency from './3-currency.js';
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
-    this._amount = this.validateAmount(amount);
-    this._currency = this.validateCurrency(currency);
+    this._amount = Pricing._validateAmount(amount);
+    this._currency = Pricing._validateCurrency(currency);
   }
 
-  // Amount getter and setter with validation
+  // Gett... and sett.. for amount
   get amount() {
     return this._amount;
   }
 
-  set amount(value) {
-    this._amount = this.validateAmount(value);
+  set amount(newAmount) {
+    this._amount = Pricing._validateAmount(newAmount);
   }
 
-  // Currency getter and setter with validation
+  // Gett.. and sett.. for currency
   get currency() {
     return this._currency;
   }
 
-  set currency(value) {
-    this._currency = this.validateCurrency(value);
+  set currency(newCurrency) {
+    this._currency = Pricing._validateCurrency(newCurrency);
   }
 
-  // Method to display full price
+  // Mehtod to display price
   displayFullPrice() {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
-  // Static method to convert price
+  // Method to convert to pricce
   static convertPrice(amount, conversionRate) {
     if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
-      throw new TypeError('Amount and conversion rate must be numbers');
+      throw new TypeError('Both amount and conversionRate must be numbers');
     }
     return amount * conversionRate;
   }
 
-  // Validation methods
-  validateAmount(value) {
-    if (typeof value !== 'number') {
+  // Validating method
+  static _validateAmount(amount) {
+    if (typeof amount !== 'number') {
       throw new TypeError('Amount must be a number');
     }
-    return value;
+    return amount;
   }
 
-  validateCurrency(value) {
-    if (!(value instanceof Currency)) {
-      throw new TypeError('Currency must be an instance of the Currency class');
+  static _validateCurrency(currency) {
+    if (!(currency instanceof Currency)) {
+      throw new TypeError('Currency must be an instance of Currency');
     }
-    return value;
+    return currency;
   }
 }
-
