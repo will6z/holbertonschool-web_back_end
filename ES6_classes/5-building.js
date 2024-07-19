@@ -1,6 +1,6 @@
 class Building {
   constructor(sqft) {
-    if (this.constructor === Building) {
+    if (new.target === Building) {
       throw new Error('Cannot instantiate an abstract class');
     }
     this._sqft = sqft;
@@ -18,3 +18,4 @@ class Building {
 }
 
 export default Building;
+
