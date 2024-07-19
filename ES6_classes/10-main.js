@@ -7,10 +7,6 @@ export default class Car {
     this._color = color;
   }
 
-  [cloneSymbol]() {
-    return new this.constructor();
-  }
-
   cloneCar() {
     const ClonedCar = Object.getPrototypeOf(this).constructor;
     return new ClonedCar(this._brand, this._motor, this._color);
