@@ -2,6 +2,8 @@
 """
 This module provides a function `add` that adds two floats and returns the sum.
 """
+
+
 def add(a: float, b: float) -> float:
     """
     Adds two float numbers and returns the sum as a float.
