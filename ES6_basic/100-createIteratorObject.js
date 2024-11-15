@@ -6,4 +6,4 @@ export default function createIteratorObject(report) {
     }
     // Return an iterator for the employees array
     return employees[Symbol.iterator]();
-
+}
